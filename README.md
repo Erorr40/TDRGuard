@@ -2,10 +2,11 @@
 
 **Lightweight GPU Watchdog, Crash Snapshotter & Instant Driver Recovery Tool for Windows**
 
+[![Download v1.0.0](https://img.shields.io/github/v/release/Erorr40/TDRGuard?color=brightgreen&label=Download%20Release)](https://github.com/Erorr40/TDRGuard/releases/latest)
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011%20(x64)-blue.svg)](https://www.microsoft.com/windows)
+[![C++20](https://img.shields.io/badge/Language-C%2B%2B20%20(MSVC)-blue.svg)](https://en.cppreference.com/w/cpp/20)
+[![Binary Size](https://img.shields.io/badge/Size-768%20KB-success.svg)](https://github.com/Erorr40/TDRGuard/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-blue.svg)](https://www.microsoft.com/windows)
-[![C++20](https://img.shields.io/badge/C%2B%2B-20-blue.svg)](https://en.cppreference.com/w/cpp/20)
-[![Zero External Deps](https://img.shields.io/badge/Dependencies-Dear%20ImGui%20only-green.svg)](https://github.com/ocornut/imgui)
 
 ---
 
@@ -69,30 +70,30 @@ flowchart TD
 
 ## 🔨 Building
 
-### Option A — CMake (Recommended)
+### Option A — Visual Studio 2022 / 2026 (Recommended)
 
 ```bash
-git clone https://github.com/yourusername/TDRGuard.git
+git clone https://github.com/Erorr40/TDRGuard.git
 cd TDRGuard
 cmake -B build -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release
-# Output: build/Release/TDRGuard.exe
+# Standalone output: build/Release/TDRGuard.exe
 ```
 
-### Option B — MSVC Developer Command Prompt
+### Option B — Ninja & MSVC Developer Environment (Fastest)
 
-Open **"x64 Native Tools Command Prompt for VS 2022"**, then:
+Run inside an **x64 Native Tools Command Prompt**:
 
 ```bat
-git clone https://github.com/yourusername/TDRGuard.git
+git clone https://github.com/Erorr40/TDRGuard.git
 cd TDRGuard
-cmake -B build -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release
+cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build
-:: Output: build\TDRGuard.exe
+:: Standalone output: build\TDRGuard.exe
 ```
 
-> [!TIP]
-> For a faster incremental build during development, use the `-j` flag: `cmake --build build --config Release -j 8`
+### Option C — VS Code / CMake Tools
+Simply open the repository folder in VS Code with the **CMake Tools** extension installed, choose the **[Visual Studio - x86_amd64]** kit, and hit `F7` (Build).
 
 ---
 
