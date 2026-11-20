@@ -1,0 +1,19 @@
+# Build Directories
+build/
+bin/
+out/
+
+# Visual Studio & IDE files
+.vs/
+*.user
+*.suo
+*.VC.db
+*.opendb
+CMakeSettings.json
+CMakeUserPresets.json
+
+# Internal history / caches
+.brud/
+*.tmp
+
+dist/
